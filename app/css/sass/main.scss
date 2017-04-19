@@ -1,0 +1,15 @@
+$primaryColor: #fff;
+$fontColor: #000;
+body {
+    background: $primaryColor;
+}
+
+h1 {
+    color: $fontColor;
+}
+
+p {
+    color: #3d3d3d;
+    font-size: 17px;
+    font-weight: bold;
+}

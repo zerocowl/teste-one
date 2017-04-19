@@ -1,10 +1,10 @@
 (function() {
-    'use strict'
+    'use strict';
 
-    require('angular')
-    require('angular-route')
-    require('angular-animate')
-    var mainCtrl = require('./controllers/mainctrl')
+    require('angular');
+    require('angular-route');
+    require('angular-animate');
+    var mainCtrl = require('./controllers/mainctrl');
 
     angular.module('SampleApp', ['ngRoute', 'ngAnimate'])
 
@@ -12,8 +12,8 @@
         '$locationProvider',
         '$routeProvider',
         function($locationProvider, $routeProvider) {
-            $locationProvider.hashPrefix('!')
-                // routes
+            $locationProvider.hashPrefix('!');
+            // routes
             $routeProvider
                 .when("/", {
                     templateUrl: "./partials/partial1.html",
@@ -21,10 +21,10 @@
                 })
                 .otherwise({
                     redirectTo: '/'
-                })
+                });
         }
     ])
 
     // Load controller
-    .controller('MainController', ['$scope', mainCtrl])
-}())
+    .controller('MainController', ['$scope', mainCtrl]);
+}());

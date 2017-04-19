@@ -3,5 +3,6 @@ Teste angularJS
 - nodejs (servidor)
 - bower (dependencias front)
 - gulp (tasks js)
-
- > npm init > bower init
+- browserify (modulos estilo AMD)
+- jshint (styleguide)
+ > npm init > bower init > 
