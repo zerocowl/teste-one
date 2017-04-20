@@ -1,15 +1,67 @@
 $primaryColor: #fff;
 $fontColor: #000;
+html {
+    height: 100%;
+}
+
 body {
     background: $primaryColor;
+    height: 100%;
 }
 
 h1 {
     color: $fontColor;
 }
 
-p {
-    color: #3d3d3d;
-    font-size: 17px;
-    font-weight: bold;
+a {
+    cursor: pointer;
+}
+
+#wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.details {
+    list-style: none;
+}
+
+.footer {
+    background-color: #101010;
+    color: #fff;
+    height: 70px;
+}
+
+.perfil-img {
+    width: auto;
+    height: 260px;
+}
+
+.img-pedido {
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+    margin: 0px;
+    float: left;
+    color: #fff;
+    .img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.navbar {
+    border-radius: 0px !important;
+}
+
+.navbar-inverse {
+    .navbar-text {
+        color: #ffffff;
+    }
+    .navbar-brand {
+        color: #ffffff;
+    }
 }

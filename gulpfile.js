@@ -3,14 +3,14 @@ var gulp = require('gulp');
 
 // plugins
 var connect = require('gulp-connect');
-var jshint = require('gulp-jshint');
-var uglify = require('gulp-uglify');
-var minifyCSS = require('gulp-minify-css');
-var clean = require('gulp-clean');
-var runSequence = require('run-sequence');
-var browserify = require('gulp-browserify');
-var concat = require('gulp-concat');
-var sass = require('gulp-sass');
+jshint = require('gulp-jshint');
+uglify = require('gulp-uglify');
+minifyCSS = require('gulp-minify-css');
+clean = require('gulp-clean');
+runSequence = require('run-sequence');
+browserify = require('gulp-browserify');
+concat = require('gulp-concat');
+sass = require('gulp-sass');
 
 // tasks
 gulp.task('lint', function() {
@@ -45,16 +45,22 @@ gulp.task('copy-html-files', function() {
     gulp.src('./app/**/*.html')
         .pipe(gulp.dest('dist/'));
 });
-gulp.task('connect', function() {
+gulp.task('server', function() {
     connect.server({
         root: 'app/',
-        port: 8888
+        livereload: true,
+        port: 3000,
+        host: 'localhost',
+        fallback: 'app/index.html'
     });
 });
 gulp.task('connectDist', function() {
     connect.server({
         root: 'dist/',
-        port: 9999
+        livereload: true,
+        host: localhost,
+        port: 9999,
+        fallback: 'app/index.html'
     });
 });
 
@@ -97,10 +103,10 @@ gulp.task('browserifyDist', function() {
 });
 
 // default task
-gulp.task('default', ['lint', 'browserify', 'sass', 'watch', 'connect']);
+gulp.task('default', ['browserify', 'sass', 'watch', 'server']);
 // build task
 gulp.task('build', function() {
     runSequence(
-        ['clean'], ['lint', 'sass', 'minify-css', 'browserifyDist', 'copy-html-files', 'copy-bower-components', 'connectDist']
+        ['clean'], ['sass', 'minify-css', 'browserifyDist', 'copy-html-files', 'copy-bower-components', 'connectDist']
     );
 });

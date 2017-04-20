@@ -1,0 +1,27 @@
+<div class="container" ng-controller="DadosController">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+                <img ng-src="{{dados.img}}" class="img perfil-img">
+            </div>
+            <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+                <div class="container" style="border-bottom:1px solid black">
+                    <h2>{{dados.nome}}</h2>
+                </div>
+                <hr>
+                <ul class="container details">
+                    <li>
+                        <p><i class="fa fa-id-card-o" aria-hidden="true"></i> {{dados.cpf | cpf}}</p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-envelope" aria-hidden="true"></i> {{dados.email}}
+                        </p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-phone" aria-hidden="true"></i> {{dados.telefone | tel}}
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>

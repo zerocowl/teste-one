@@ -1,25 +1,73 @@
 <!DOCTYPE html>
-<html ng-app="SampleApp">
+<html ng-app="Lojinha">
+<base href="http://localhost:3000">
 
-<head lang="en">
+<head lang="pt-br">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
     <title>Lojinha</title>
     <!-- styles -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
     <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/custom.css" />
 </head>
 
 <body>
-    <div class="container">
-        <h1>Lojinha</h1>
-        <!-- views -->
-        <div ng-view></div>
-    </div>
+
+    <nav role="navigation" class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Lojinha</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+                <a href="/" class="navbar-brand">Lojinha</a>
+            </div>
+
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <form class="navbar-form" role="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Pesquisar" id="srch-term" ng-model="filterPedidos">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i>
+</button>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                    <li class="active"><a href="/">Pedidos</a></li>
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle">Perfil <b class="caret"></b></a>
+                        <ul role="menu" class="dropdown-menu">
+                            <li><a href="/perfil">Meus Dados</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/endereco">Meus Endereços</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- views -->
+    <ng-view id="wrap"></ng-view>
+
+
+    <footer class="container-fluid text-center footer navbar-fixed-bottom">
+        <div class="copyrights" style="margin-top:25px;">
+            <p>Lojinha do Elmo © 2017, All Rights Reserved
+                <br>
+                <span>by Zero</span></p>
+        </div>
+    </footer>
+
+
     <!-- scripts -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>

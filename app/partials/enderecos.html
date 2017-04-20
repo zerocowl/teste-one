@@ -1,0 +1,24 @@
+<div class="container" id="wrap">
+    <div class="row">
+        <h2>{{title}}</h2>
+        <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ] " ng-controller="EnderecoController">
+            <table id="tableReport" class="table table-hover table-striped ">
+                <tbody>
+                    <tr class="media" id="carga_30" data-id="30" ng-repeat="endereco in enderecos">
+                        <td class="media-left" style=" width: 90px;  display: block;">
+                            <h2><i class="fa fa-map-marker" aria-hidden="true"></i> - {{$index}} {{i}}</h2>
+                        </td>
+                        <td class="media-body">
+                            <h4 class="media-heading"><b>Endereço: </b>{{endereco.logradouro}}</h4>
+                            <span><strong>CEP: </strong> <span class="label label-info">{{endereco.cep | cep}}</span></span>
+                            <br/>
+                            <span><strong>Cidade: </strong>{{endereco.cidade}}</span>
+                            <br/>
+                            <span><strong>Estado: </strong> {{endereco.UF}}</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

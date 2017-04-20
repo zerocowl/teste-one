@@ -1,0 +1,17 @@
+[{
+    "nome": "Apple Watch",
+    "src": "img/img1.jpg",
+    "descricao": "Um relogio muito estiloso"
+}, {
+    "nome": "iPhone 6S plus",
+    "src": "img/img2.jpg",
+    "descricao": "Maior que o 5S, mais caro que o S8"
+}, {
+    "nome": "TV 42' ",
+    "src": "img/img3.jpg",
+    "descricao": "A maior das maiores TV's"
+}, {
+    "nome": "Impressora a Laser",
+    "src": "img/img4.jpg",
+    "descricao": "Não vem com cartuchos, sinto muito"
+}]
