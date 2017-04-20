@@ -3,7 +3,6 @@ var gulp = require('gulp');
 
 // plugins
 var connect = require('gulp-connect');
-jshint = require('gulp-jshint');
 uglify = require('gulp-uglify');
 minifyCSS = require('gulp-minify-css');
 clean = require('gulp-clean');
@@ -13,12 +12,6 @@ concat = require('gulp-concat');
 sass = require('gulp-sass');
 
 // tasks
-gulp.task('lint', function() {
-    gulp.src(['./app/**/*.js', '!./app/bower_components/**'])
-        .pipe(jshint())
-        .pipe(jshint.reporter('default'))
-        .pipe(jshint.reporter('fail'));
-});
 gulp.task('clean', function() {
     gulp.src('./dist/*')
         .pipe(clean({ force: true }));

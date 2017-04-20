@@ -1,67 +1,68 @@
-$primaryColor: #fff;
-$fontColor: #000;
-html {
-    height: 100%;
-}
-
-body {
-    background: $primaryColor;
-    height: 100%;
-}
-
-h1 {
-    color: $fontColor;
-}
-
-a {
-    cursor: pointer;
-}
-
-#wrap {
-    min-height: 100%;
-    height: auto;
-    margin: 0 auto -60px;
-    padding: 0 0 60px;
-}
-
-.details {
-    list-style: none;
-}
-
-.footer {
-    background-color: #101010;
-    color: #fff;
-    height: 70px;
-}
-
-.perfil-img {
-    width: auto;
-    height: 260px;
-}
-
-.img-pedido {
-    width: 120px;
-    height: 120px;
-    padding: 10px;
-    margin: 0px;
-    float: left;
-    color: #fff;
-    .img {
-        display: block;
-        width: 100%;
+    @import url("http://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900,400italic");
+    @import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
+    $primaryColor: #fff;
+    $fontColor: #000;
+    html {
+        height: 100%;
+    }
+    
+    body {
+        background: $primaryColor;
+        height: 100%;
+    }
+    
+    h1 {
+        color: $fontColor;
+    }
+    
+    a {
+        cursor: pointer;
+    }
+    
+    #wrap {
+        min-height: 100%;
         height: auto;
+        margin: 0 auto -60px;
+        padding: 0 0 60px;
     }
-}
-
-.navbar {
-    border-radius: 0px !important;
-}
-
-.navbar-inverse {
-    .navbar-text {
-        color: #ffffff;
+    
+    .details {
+        list-style: none;
     }
-    .navbar-brand {
-        color: #ffffff;
+    
+    .footer {
+        background-color: #101010;
+        color: #fff;
+        height: 70px;
     }
-}
+    
+    .perfil-img {
+        width: auto;
+        height: 260px;
+    }
+    
+    .thumbnail {
+        height: 320px;
+    }
+    
+    .img-pedido {
+        height: 222px !important;
+        padding: 10px;
+        margin: 0px;
+        float: left;
+        color: #fff;
+        position: relative;
+    }
+    
+    .navbar {
+        border-radius: 0px !important;
+    }
+    
+    .navbar-inverse {
+        .navbar-text {
+            color: #ffffff;
+        }
+        .navbar-brand {
+            color: #ffffff;
+        }
+    }

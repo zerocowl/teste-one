@@ -1,18 +1,15 @@
 <div class="container" id="wrap">
-    <div class="row">
-        <h2>{{title}}</h2>
-        <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ] " ng-controller="PedidosController">
-            <ul class="event-list">
-                <li ng-repeat="pedido in pedidos | filter: filterPedidos">
-                    <div class="img-pedido">
-                        <img ng-src="{{pedido.src}}" class="img-responsive" />
-                    </div>
-                    <div class="info">
-                        <h2 class="title">{{pedido.nome}}</h2>
-                        <p class="desc">{{pedido.descricao | limitTo:60}}</p>
-                    </div>
-                </li>
-            </ul>
+    <h2 class="text-center">{{title}}</h2>
+    <div class="row" ng-controller="PedidosController">
+        <div class="col-md-3" ng-repeat="pedido in pedidos | filter: filterPedidos">
+            <div class="thumbnail">
+                <img ng-src="{{pedido.src}}" class="img-pedido col-xs-12">
+                <div class="caption">
+                    <h4 class="pull-right"><span class="label label-info">R$ {{pedido.preco}}</span></h4>
+                    <h4>{{pedido.nome}}</h4>
+                    <p>{{pedido.descricao | limitTo:60}}</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>

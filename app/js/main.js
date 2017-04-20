@@ -48,7 +48,7 @@
         }
     ])
 
-    // Load controllers
+    // Loads
     .controller('PedidosController', ['$scope', '$http', pedidosCtrl])
         .controller('DadosController', ['$scope', '$http', dadosCtrl])
         .controller('EnderecoController', ['$scope', '$http', enderecoCtrl])
