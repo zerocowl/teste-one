@@ -20,12 +20,11 @@ gulp.task('minify-css', function() {
     var opts = { comments: true, spare: true };
     gulp.src(['./app/**/*.css', '!./app/bower_components/**'])
         .pipe(minifyCSS(opts))
-        .pipe(gulp.dest('./dist/css'));
+        .pipe(gulp.dest('./dist/'));
 });
 gulp.task('minify-js', function() {
     gulp.src(['./app/**/*.js', '!./app/bower_components/**'])
         .pipe(uglify({
-            exclude: ['./app/js/libs/**'],
             // inSourceMap:
             // outSourceMap: "app.js.map"
         }))
@@ -52,8 +51,8 @@ gulp.task('connectDist', function() {
     connect.server({
         root: 'dist/',
         livereload: true,
-        host: 'localhost',
-        port: 9000,
+        host: localhost,
+        port: 9999,
         fallback: 'app/index.html'
     });
 });
@@ -63,8 +62,7 @@ gulp.task('browserify', function() {
     gulp.src(['app/js/main.js'])
         .pipe(browserify({
             insertGlobals: true,
-            debug: true,
-            ignore: ['util', 'materialize']
+            debug: true
         }))
         .pipe(concat('bundled.js'))
         .pipe(gulp.dest('./app/js'));

@@ -1,15 +1,11 @@
 [{
     "logradouro": "Rua Principal, Centro - nº 15",
     "cep": "03807040",
-    "numero": 123,
-    "bairro": "centro",
     "cidade": "São Paulo",
     "UF": "SP"
 }, {
     "logradouro": "Avenida do Bairro, Centro - nº 2315",
     "cep": "03807015",
-    "numero": 3242,
-    "bairro": "centro",
     "cidade": "São Paulo",
     "UF": "SP"
 }]

@@ -1,0 +1,44 @@
+[{
+        "nome": "Apple Watch",
+        "src": "img/img1.jpg",
+        "descricao": "Um relogio muito estiloso",
+        "preco": "132,99"
+    }, {
+        "nome": "iPhone 6S plus",
+        "src": "img/img2.jpg",
+        "descricao": "Maior que o 5S, mais caro que o S8",
+        "preco": "2.312,29"
+    }, {
+        "nome": "Impressora a Laser",
+        "src": "img/img4.jpg",
+        "descricao": "Não vem com cartuchos, sinto muito",
+        "preco": "1232,24"
+    }, {
+        "nome": "Apple Watch",
+        "src": "img/img1.jpg",
+        "descricao": "Um relogio muito estiloso",
+        "preco": "132,99"
+    }, {
+        "nome": "TV 42' ",
+        "src": "img/img3.jpg",
+        "descricao": "A maior das maiores TV's",
+        "preco": "100,00"
+    },
+    {
+        "nome": "iPhone 6S plus",
+        "src": "img/img2.jpg",
+        "descricao": "Maior que o 5S, mais caro que o S8",
+        "preco": "2.312,29"
+    }, {
+        "nome": "TV 42' ",
+        "src": "img/img3.jpg",
+        "descricao": "A maior das maiores TV's",
+        "preco": "100,00"
+    },
+    {
+        "nome": "Impressora a Laser",
+        "src": "img/img4.jpg",
+        "descricao": "Não vem com cartuchos, sinto muito",
+        "preco": "1232,24"
+    }
+]
