@@ -4,6 +4,12 @@
     require('angular');
     require('angular-route');
     require('angular-animate');
+    require('angular-ui-router');
+    require('./libs/util.js');
+    require('./start.js');
+    //factorys & services
+    var loginService = require('./services/loginService');
+    var userService = require('./services/userService');
 
     //filters
     var cepFilter = require('./filters/cepFilter');
@@ -11,48 +17,73 @@
     var telFilter = require('./filters/phoneFilter');
 
     //controllers
-    var pedidosCtrl = require('./controllers/pedidosController');
-    var dadosCtrl = require('./controllers/dadosController');
-    var enderecoCtrl = require('./controllers/enderecoController');
+    var homeCtrl = require('./controllers/homeController');
+    var loginCtrl = require('./controllers/loginController');
+    var produtosCtrl = require('./controllers/produtosController');
+    var carrinhoCtrl = require('./controllers/carrinhoController');
+    var cadastroCtrl = require('./controllers/cadastroController');
+    var checkoutCtrl = require('./controllers/checkoutController');
 
+    angular.module('Happy', ['ngRoute', 'ngAnimate', 'ui.router'])
 
-    angular.module('Lojinha', ['ngRoute', 'ngAnimate'])
 
     .config([
         '$locationProvider',
-        '$routeProvider',
-        function($locationProvider, $routeProvider) {
+        '$stateProvider',
+        '$urlRouterProvider',
+        function($locationProvider, $stateProvider, $urlRouterProvider) {
             $locationProvider.hashPrefix('!');
             $locationProvider.html5Mode({
                 enabled: true,
                 requireBase: false
             });
+            $urlRouterProvider.otherwise('/home');
 
-            // routes
-            $routeProvider
-                .when("/", {
-                    templateUrl: "./partials/pedidos.html",
-                    controller: "PedidosController"
+            //routes
+            $stateProvider
+                .state('home', {
+                    url: '/home',
+                    templateUrl: "/views/home.html",
                 })
-                .when("/perfil", {
-                    templateUrl: "./partials/perfil.html",
-                    controller: "DadosController"
+                .state('login', {
+                    url: '/login',
+                    templateUrl: './views/login.html',
+                    controller: 'LoginController'
                 })
-                .when("/endereco", {
-                    templateUrl: "./partials/enderecos.html",
-                    controller: "EnderecoController"
+                .state('produtos', {
+                    url: '/produtos',
+                    controller: "ProdutosController",
+                    templateUrl: './views/produtos.html'
                 })
-                .otherwise({
-                    redirectTo: '/'
-                });
+                .state('carrinho', {
+                    url: '/carrinho',
+                    controller: "CarrinhoController",
+                    templateUrl: '/views/carrinho.html'
+                })
+                .state('checkout', {
+                    url: '/checkout',
+                    controller: "CheckoutController",
+                    templateUrl: '/views/checkout.html'
+                })
+                .state('index.modals', {
+                    templateUrl: '/partials/modals.html'
+                })
+
         }
     ])
 
     // Loads
-    .controller('PedidosController', ['$scope', '$http', pedidosCtrl])
-        .controller('DadosController', ['$scope', '$http', dadosCtrl])
-        .controller('EnderecoController', ['$scope', '$http', enderecoCtrl])
-        .filter('cep', cepFilter)
+    // .factory('LoginFactory',['$scope','$http'],loginFactory)
+    .service('LoginService', loginService)
+        .service('UserService', userService)
+        .controller('HomeController', ['$scope', '$http', homeCtrl])
+        .controller('LoginController', ['$scope', '$http', '$stateParams', '$state', 'LoginService', loginCtrl])
+        .controller('ProdutosController', ['$scope', '$http', produtosCtrl])
+        .controller('CarrinhoController', ['$scope', '$http', carrinhoCtrl])
+        .controller('CadastroController', ['$scope', '$http', cadastroCtrl])
+        .controller('CheckoutController', ['$scope', '$http', checkoutCtrl])
+
+    .filter('cep', cepFilter)
         .filter('cpf', cpfFilter)
         .filter('tel', telFilter);
 }());

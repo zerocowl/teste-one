@@ -1,32 +1,94 @@
-# Lojinha
-Teste angularJS
-> Para executar o projeto basta executar os seguintes comandos 
-
-**ATENÇÃO** O projeto usa gulp e bower, logo é importante instala-los com `` npm -g `` antes de continuar
-
-``git clone https://github.com/zerocowl/teste-one.git``  --clone o projeto
-
-``npm install && bower install`` -- instale as dependencias  
-`` npm start `` -- inicia o projeto no localhost:3000  
-`` npm run build`` --gera o build do projeto na pasta _dist_
-
-## Tecnologias usadas
+# Pixel
+## TODO
+  - slides home
+  - nav bar logado
+  - carrinho (habilitar o nav bar resolve)
+  - criar json resgates
+  - salvar em local storage
 
 
-- Nodejs (servidor JS) 
-- Bower (dependencias front)
-- Gulp (task runner)
-- Browserify (modularizador)
-- Sass (pre-processador)
-- Angular (framework JS)
 
-## Considerações
+> ## ROTA  => PRODUTO
 
-> Utilizei nodejs pelo simples fato de estar usando o gulp, foi uma opção nesse caso pelo fato dele ser mais simples, além da sua sintaxe ser mais clara, em termos de velocidade o gulp é bem mais rapido e por ser um projeto simples ele atendia todas as necessidades basicas.  
-Conforme descrito no teste o objetivo era criar 3 paginas  com dados sobre pedidos, endereços e usuario, não foi espeficificado nenhuma ação em especial, por essa razão usei um modelo onde carreguei os dados atraves de arquivos json e direcionei para partials usando o router do angular.
-Não me atentei muito aos detalhes da parte visual, segui um conceito simples e claro, aproveitei para usar um SASS, facilitando a manutenção e agilizando o processo de customização, em conjunto com o bootstrap.  
-Usei o  _browserify_ por facilitar a componentização do projeto, o que considero fundamental pra qualquer projeto atualmente, principalmente ao trabalhar com nodejs/angular.  
-Basicamente o arquivo main.js carrega todos os controllers e filters de forma bem organizada, o que facilita a manutenção do codigo.  
-Por fim adicionei alguns filters e um barra de busca bem simples, dando um pouco mais de ação ao projeto,pois como disse anteriormente a espeficicação não citava uma ação em especial dentro das paginas ou entre elas.
+**POST** --> `api/cliente/catalogos ` =>  retorna todos os catalogos de uma cliente com base no ID e do catalogo [*tipo de catalogo*]  
+**POST** --> `api/cliente/catalogo/produtos` => retorna todos os produtos com base no catalogo e tipo  
+**POST** --> `api/cliente/catalogo/produtos/departamento` =>  retorna todos os produtos do departamento com base no catologo  
+**POST** --> `api/cliente/produto/` => retorna todos os dados do produto com base no catalogo  
+**POST** --> `api/cliente/produto/tipo` => retorna todos os produtos com base no tipo(eletrodomestico/casa/jardim)  
+>> **Modelo retorno produto**
+```{
+    "produto": [{
+        "catalogoId": 12,
+        "id": 1,
+        "departamentos": [
+            "cozinha",
+            "casa"
+        ],
+        "descricao": "panelas",
+        "estoque": "10",
+        "lojaId": 3,
+        "opcoes": [{
+            "cor": [
+                "preta",
+                "branca"
+            ],
+            "tamanho": [
+                "normal"
+            ]
+        }],
+        "preco": 110.2,
+        "sku": "233",
+        "srcImg": "/panela.jpg"
+    }]
+}
+```
 
-_Qualquer duvida estou a disposição._
+> ## ROTA => USUARIO 
+**POST** --> `api/cliente/usuarios` => retorna os usuarios com base no cliente  
+**POST** --> `api/cliente/usuario` => retorna os dados de um usuario com base no __ID/login/email__  
+**POST** --> `api/cliente/usuario/endereço` =>retorna os endereços de um usuario com base no ID  
+**POST** --> `api/usuario/reset` => reseta a senha de um usuario e retorna a nova senha com base no ID  
+**POST** --> `api/usuario/perfil` => retorna o tipo do usuario com base no ID
+
+>> **Modelo retorno usuario**
+```
+{
+    "usuario": {
+        "dataNasc": "1990-01-01T02:00:00.000Z",
+        "idCliente": 3,
+        "nome": "jose",
+        "saldo": 123000,
+        "sobrenome": "padilha",
+        "status": "ativo",
+        "tipo": 1
+    }
+}
+```
+
+> ## ROTA => CHECKOUT 
+**POST** --> `api/checkout/resgate` => recebe os dados do resgate e retorna um status ``{usuario, produtos, datas, endereço, ip}`` => status  
+**POST** --> `api/checkout/resgate/status` => altera o status de um resgate com base no ID [liberado]  
+**POST** --> `api/checkout/resgate/usuario` => retorna os resgates e seus status com base no usuario  {resgates}  
+**POST** --> `api/checkout/resgate/cliente` => retorna os resgates e seus status com base no ID da cliente {resgates}  
+
+```
+{
+    "resgate": {
+        "idCliente": 1,
+        "catalogoId": 1,
+        "clienteId": 1,
+        "dataSolicitacao": "2017-12-01T02:00:00.000Z",
+        "lojaId": 3,
+        "produto": [{
+                "id": 1,   
+                "sku": "1"
+            },
+            {
+                "id": 4,
+                "sku": "2"
+            }
+        ]
+    }
+}
+```
+ 

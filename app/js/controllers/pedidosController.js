@@ -1,9 +1,8 @@
 module.exports = function($scope, $http) {
-    $scope.title = "Meus Pedidos";
-    $scope.pedidos = [];
+    $scope.produtos = [];
     //debugger;
 
-    $http.get('json/pedidos.json').then(successCallback, errorCallback);
+    $http.get('json/produtos.json').then(successCallback, errorCallback);
 
     function successCallback(response) {
         $scope.pedidos = response.data;

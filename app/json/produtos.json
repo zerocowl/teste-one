@@ -1,0 +1,164 @@
+[{
+        "lojaId": 3,
+        "id": 1,
+        "catalogoId": 12,
+        "descricao": "Impressora",
+        "srcImg": "/impressora_laser.jpg",
+        "preco": 20100,
+        "sku": "233",
+        "estoque": "10",
+        "departamentos": [
+            "cozinha",
+            "casa"
+        ],
+        "opcoes": [{
+            "cor": [
+                "preta",
+                "branca"
+            ],
+            "tamanho": [
+                "normal"
+            ]
+        }]
+    },
+    {
+        "lojaId": 3,
+        "id": 11,
+        "catalogoId": 12,
+        "descricao": "carro",
+        "srcImg": "/cafeteira.jpg",
+        "preco": 11000,
+        "sku": "1132222",
+        "estoque": "10",
+        "departamentos": [
+            "veiculo"
+        ],
+        "opcoes": [{
+            "manual": [
+                "/manual.pdf"
+            ]
+        }]
+    },
+    {
+        "lojaId": 3,
+        "id": 2,
+        "catalogoId": 12,
+        "descricao": "Chuveiro",
+        "srcImg": "/Honda City.jpg",
+        "preco": 156000,
+        "sku": "33",
+        "estoque": "10",
+        "departamentos": [
+            "casa"
+        ],
+        "opcoes": [{
+            "voltagem": [
+                220
+            ]
+        }]
+    },
+    {
+        "lojaId": 3,
+        "id": 2,
+        "catalogoId": 12,
+        "descricao": "Celular",
+        "srcImg": "/iPhone 6S.jpg",
+        "preco": 2100,
+        "sku": "33",
+        "estoque": "10",
+        "departamentos": [
+            "eletronico"
+        ],
+        "opcoes": [{
+            "cor": [
+                "preto"
+            ]
+        }]
+    },
+    {
+        "lojaId": 3,
+        "id": 2,
+        "catalogoId": 12,
+        "descricao": "Honda",
+        "srcImg": "/honda.jpg",
+        "preco": 662100,
+        "sku": "312313",
+        "estoque": "40",
+        "departamentos": [
+            "veiculos"
+        ],
+        "opcoes": [{
+            "cor": [
+                "preto"
+            ]
+        }]
+    },
+    {
+        "lojaId": 3,
+        "id": 2,
+        "catalogoId": 12,
+        "descricao": "Filtro d'agua",
+        "srcImg": "/filtro_agua.jpg",
+        "preco": 82000,
+        "sku": "56",
+        "estoque": "10",
+        "departamentos": [
+            "eletronico"
+        ],
+        "opcoes": [{}]
+    },
+    {
+        "lojaId": 3,
+        "id": 2,
+        "catalogoId": 12,
+        "descricao": "Chapinha",
+        "srcImg": "/Chapinha.jpg",
+        "preco": 2100,
+        "sku": "133",
+        "estoque": "10",
+        "departamentos": [
+            "eletronico"
+        ],
+        "opcoes": [{
+            "voltagem": [
+                110
+            ]
+        }]
+    },
+    {
+        "lojaId": 3,
+        "id": 212,
+        "catalogoId": 12,
+        "descricao": "Cafeteira",
+        "srcImg": "/cafeteira_eletrica.jpg",
+        "preco": 42000,
+        "sku": "313",
+        "estoque": "1",
+        "departamentos": [
+            "eletrodomestico"
+        ],
+        "opcoes": [{
+            "cor": [
+                "preto"
+            ]
+        }]
+    },
+    {
+        "lojaId": 3,
+        "id": 2,
+        "catalogoId": 12,
+        "descricao": "Notebook",
+        "srcImg": "/Notebook All in One.jpg",
+        "preco": 61000,
+        "sku": "33",
+        "estoque": "10",
+        "departamentos": [
+            "eletronico"
+        ],
+        "opcoes": [{
+            "cor": [
+                "preto"
+            ]
+        }]
+    }
+]
