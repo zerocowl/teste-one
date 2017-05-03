@@ -3,5 +3,17 @@
     "cpf": "42233445566",
     "email": "email@padilha.com",
     "telefone": "1156562020",
-    "img": "img/perfil.png"
+    "img": "img/perfil.png",
+    "pontos": 23221,
+    "endereco": [{
+        "logradouro": "Rua Principal, Centro - nº 15",
+        "cep": "03807040",
+        "cidade": "São Paulo",
+        "UF": "SP"
+    }, {
+        "logradouro": "Avenida do Bairro, Centro - nº 2315",
+        "cep": "03807015",
+        "cidade": "São Paulo",
+        "UF": "SP"
+    }]
 }

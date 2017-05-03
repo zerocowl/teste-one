@@ -1,82 +1,76 @@
 <!DOCTYPE html>
-<html ng-app="Lojinha">
+<html lang="pt-br" ng-app="Happy">
 <base href="http://localhost:3000">
 
-<head lang="pt-br">
+<head>
     <meta charset="utf-8">
+    <title>Happy</title>
+    <!-- Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- materialize.css -->
+    <link type="text/css" rel="stylesheet" ng-href="/css/materialize.css" media="screen,projection">
+    <link rel="stylesheet" type="text/css" ng-href="/css/custom.css">
+    <!-- Otimizar para mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lojinha</title>
-    <!-- styles -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
-    <link rel="stylesheet" href="css/main.css" />
 </head>
 
 <body>
-
-    <nav role="navigation" class="navbar navbar-inverse">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                <span class="sr-only">Lojinha</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-                <a href="/" class="navbar-brand">Lojinha</a>
-            </div>
-
-            <div id="navbarCollapse" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <form class="navbar-form" role="search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Pesquisar" id="srch-term" ng-model="filterPedidos">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i>
-</button>
-                                </div>
-                            </div>
-                        </form>
-                    </li>
-                    <li class="active"><a href="/">Pedidos</a></li>
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle">Perfil <b class="caret"></b></a>
-                        <ul role="menu" class="dropdown-menu">
-                            <li><a href="/perfil">Meus Dados</a></li>
-                            <li class="divider"></li>
-                            <li><a href="/endereco">Meus Endereços</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.min.js"></script>
+    <script src="/js/libs/materialize.min.js"></script>
+    <script src="js/bundled.js"></script>
+    <header>
+        <!-- header -->
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper container">
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <a href="/index" class="brand-logo"><img src="/images/logo.png" alt="Home" class="responsive-img" /></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li style="width:200px;"><a href="/login" class="blue-text">Entrar / Cadastrar</a></li>
+                        <li><a href="/Login/FaleConosco" class="white-text">Fale Conosco</a></li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                        <li style=""><a href="/login" class="blue-text">Entrar / Cadastrar</a></li>
+                        <li style=""><a href="/Login/FaleConosco" class="white-text">Fale Conosco</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-    </nav>
-
-    <!-- views -->
-    <ng-view id="wrap"></ng-view>
-
-
-    <footer class="container-fluid text-center footer navbar-fixed-bottom">
-        <div class="copyrights" style="margin-top:25px;">
-            <p>Lojinha do Elmo © 2017, All Rights Reserved
-                <br>
-                <span>by Zero</span></p>
+    </header>
+    <!-- header -->
+    <main>
+        <ui-view></ui-view>
+    </main>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row grey">
+                <div class="col s12 m3 l5">
+                    <ul>
+                        <li>
+                            <a href="/Login/FaleConosco" class="white-text">Fale Conosco</a>
+                        </li>
+                        <li>
+                            <a href="/Login/Manual" class="white-text">Regulamento</a>
+                        </li>
+                        <li>
+                            <a href="/Home/RegulamentoViagem" class="white-text">Regulamento de Viagens</a>
+                        </li>
+                        <!--<li>
+                            <a href="/Login/GaleriaVideos" class="white-text">Galeria de Vídeos</a>
+                        </li>-->
+                    </ul>
+                </div>
+                <div class="col s12 m9 l4 right">
+                    <div class="white-text footer-copyright">
+                        Todos os direitos reservados | <a class="white-text text-lighten-4" href="#"> Happy</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
-
-
-    <!-- scripts -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="./js/bundled.js"></script>
-    <script>
-        //oculta o menu mobile na navegação
-        var navMain = $(".navbar-collapse");
-        navMain.on("click", "a:not([data-toggle])", null, function() {
-            navMain.collapse('hide');
-        });
-    </script>
+    <!-- Modals-->
+    <ui-view name="index.modals"></ui-view>
 </body>
 
 </html>
