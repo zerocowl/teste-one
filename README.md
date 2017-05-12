@@ -28,5 +28,3 @@ Não me atentei muito aos detalhes da parte visual, segui um conceito simples e 
 Usei o  _browserify_ por facilitar a componentização do projeto, o que considero fundamental pra qualquer projeto atualmente, principalmente ao trabalhar com nodejs/angular.  
 Basicamente o arquivo main.js carrega todos os controllers e filters de forma bem organizada, o que facilita a manutenção do codigo.  
 Por fim adicionei alguns filters e um barra de busca bem simples, dando um pouco mais de ação ao projeto,pois como disse anteriormente a espeficicação não citava uma ação em especial dentro das paginas ou entre elas.
-
-_Qualquer duvida estou a disposição._
